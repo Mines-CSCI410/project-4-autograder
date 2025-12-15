@@ -12,7 +12,7 @@ wheels = [
 ]
 
 [[package]]
-name = "project-10-jackanalyzer"
+name = "project-4-asm"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [

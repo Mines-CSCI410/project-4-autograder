@@ -1,7 +1,7 @@
 [project]
-name = "project-10-jackanalyzer"
+name = "project-4-asm"
 version = "0.1.0"
-description = "verifies the functionality of the virtual machine"
+description = "verifies working asm code"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
