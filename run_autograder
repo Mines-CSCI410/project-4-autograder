@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp -r /autograder/submission/* /autograder/source/
+find /autograder/submission -name '*.asm' -exec cp {} /autograder/source/ \;
 cp -r /autograder/grader/tests/* /autograder/source/
 
 pushd /autograder/source/ >/dev/null

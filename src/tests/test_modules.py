@@ -1,5 +1,6 @@
 import unittest
 import subprocess
+import os
 
 from gradescope_utils.autograder_utils.decorators import weight, number
 
@@ -15,6 +16,8 @@ class TestBase(unittest.TestCase):
             raise AssertionError(f'Unable to run CPU Emulator!')
 
     def assertCorrectJack(self, name):
+        if not os.path.isfile(f'/autograder/source/{name}.asm'):
+            raise AssertionError(f'{name}.asm not found! Make sure the name is capitalized and has the right extension.')
         self.assertValidAssembly(name)
         self.assertCPUMatches(name)
         subprocess.run(['mv', f'/autograder/source/{name}.out', '/autograder/outputs/'])
