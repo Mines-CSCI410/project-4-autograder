@@ -8,12 +8,12 @@ class TestBase(unittest.TestCase):
     def assertValidAssembly(self, name):
         res = subprocess.call(['n2tAssembler', f'/autograder/source/{name}.asm'])
         if res != 0:
-            raise AssertionError(f'Unable to assemble student\'s ASM output!')
+            raise AssertionError(f'Unable to assemble student hack code!\nTest in the nand2tetris suite to debug.')
 
     def assertCPUMatches(self, name):
         res = subprocess.call(['n2tCPUEmulator', f'/autograder/source/{name}.tst'])
         if res != 0:
-            raise AssertionError(f'Unable to run CPU Emulator!')
+            raise AssertionError(f'Failed to pass test file!\nTest in the nand2tetris suite to debug the mismatch.')
 
     def assertCorrectJack(self, name):
         if not os.path.isfile(f'/autograder/source/{name}.asm'):
